@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B7BDCA4621B3ADEC00C31DD2 /* HolderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7BDCA4521B3ADEC00C31DD2 /* HolderView.swift */; };
+		B7BDCA4921B3AE3900C31DD2 /* ArcLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7BDCA4821B3AE3900C31DD2 /* ArcLayer.swift */; };
+		B7BDCA4D21B3AE4300C31DD2 /* TriangleLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7BDCA4A21B3AE4300C31DD2 /* TriangleLayer.swift */; };
+		B7BDCA4E21B3AE4300C31DD2 /* RectangleLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7BDCA4B21B3AE4300C31DD2 /* RectangleLayer.swift */; };
+		B7BDCA4F21B3AE4300C31DD2 /* OvalLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7BDCA4C21B3AE4300C31DD2 /* OvalLayer.swift */; };
+		B7BDCA5221B3AE8000C31DD2 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7BDCA5121B3AE8000C31DD2 /* Colors.swift */; };
 		B7E6DFC421B1D3F600754F2A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E6DFC321B1D3F600754F2A /* AppDelegate.swift */; };
 		B7E6DFC621B1D3F600754F2A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E6DFC521B1D3F600754F2A /* ViewController.swift */; };
 		B7E6DFC921B1D3F600754F2A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B7E6DFC721B1D3F600754F2A /* Main.storyboard */; };
@@ -36,6 +42,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B7BDCA4521B3ADEC00C31DD2 /* HolderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HolderView.swift; sourceTree = "<group>"; };
+		B7BDCA4821B3AE3900C31DD2 /* ArcLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArcLayer.swift; sourceTree = "<group>"; };
+		B7BDCA4A21B3AE4300C31DD2 /* TriangleLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TriangleLayer.swift; sourceTree = "<group>"; };
+		B7BDCA4B21B3AE4300C31DD2 /* RectangleLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RectangleLayer.swift; sourceTree = "<group>"; };
+		B7BDCA4C21B3AE4300C31DD2 /* OvalLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OvalLayer.swift; sourceTree = "<group>"; };
+		B7BDCA5121B3AE8000C31DD2 /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		B7E6DFC021B1D3F600754F2A /* DiceRoller.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DiceRoller.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7E6DFC321B1D3F600754F2A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B7E6DFC521B1D3F600754F2A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -78,6 +90,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B7BDCA4421B3AC1E00C31DD2 /* LoaderView */ = {
+			isa = PBXGroup;
+			children = (
+				B7BDCA4721B3AE0C00C31DD2 /* Layers */,
+				B7BDCA4521B3ADEC00C31DD2 /* HolderView.swift */,
+			);
+			path = LoaderView;
+			sourceTree = "<group>";
+		};
+		B7BDCA4721B3AE0C00C31DD2 /* Layers */ = {
+			isa = PBXGroup;
+			children = (
+				B7BDCA4C21B3AE4300C31DD2 /* OvalLayer.swift */,
+				B7BDCA4B21B3AE4300C31DD2 /* RectangleLayer.swift */,
+				B7BDCA4A21B3AE4300C31DD2 /* TriangleLayer.swift */,
+				B7BDCA4821B3AE3900C31DD2 /* ArcLayer.swift */,
+			);
+			path = Layers;
+			sourceTree = "<group>";
+		};
+		B7BDCA5021B3AE6800C31DD2 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				B7BDCA5121B3AE8000C31DD2 /* Colors.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
 		B7E6DFB721B1D3F600754F2A = {
 			isa = PBXGroup;
 			children = (
@@ -101,6 +141,8 @@
 		B7E6DFC221B1D3F600754F2A /* DiceRoller */ = {
 			isa = PBXGroup;
 			children = (
+				B7BDCA5021B3AE6800C31DD2 /* Utilities */,
+				B7BDCA4421B3AC1E00C31DD2 /* LoaderView */,
 				B7E6DFC321B1D3F600754F2A /* AppDelegate.swift */,
 				B7E6DFC521B1D3F600754F2A /* ViewController.swift */,
 				B7E6DFF321B1D58600754F2A /* RollViewController.swift */,
@@ -262,10 +304,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B7BDCA4921B3AE3900C31DD2 /* ArcLayer.swift in Sources */,
+				B7BDCA5221B3AE8000C31DD2 /* Colors.swift in Sources */,
+				B7BDCA4E21B3AE4300C31DD2 /* RectangleLayer.swift in Sources */,
 				B7E6DFC621B1D3F600754F2A /* ViewController.swift in Sources */,
 				B7E6DFC421B1D3F600754F2A /* AppDelegate.swift in Sources */,
+				B7BDCA4621B3ADEC00C31DD2 /* HolderView.swift in Sources */,
 				B7E6DFF621B1E14D00754F2A /* Dice.swift in Sources */,
 				B7E6DFF421B1D58600754F2A /* RollViewController.swift in Sources */,
+				B7BDCA4D21B3AE4300C31DD2 /* TriangleLayer.swift in Sources */,
+				B7BDCA4F21B3AE4300C31DD2 /* OvalLayer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

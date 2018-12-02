@@ -66,12 +66,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         readValues()
     }
     
+    //seque for the roll
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "rollSegue") {
-            for cell in (tableView.visibleCells as! [diceCell])
-            {
-                updateDice(itemdice: cell.dice)
-            }
+            UpdateItems()
             readValues()
             let view = segue.destination as! RollViewController
             view.dice = dice
@@ -112,42 +110,16 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
     }
     
+    //Runs through each item that is viewable in the tableview, which is all of them
+    //and will update each item to the SQL lite.
     func UpdateItems() {
-        for itemdice in dice
+        for cell in (tableView.visibleCells as! [diceCell])
         {
-            let queryString = "UPDATE Dice SET amount = ? WHERE Id = ?;"
-            
-            var stmt: OpaquePointer? = nil
-            if sqlite3_prepare(db, queryString, -1, &stmt, nil) != SQLITE_OK{
-                let errmsg = String(cString: sqlite3_errmsg(db)!)
-                print("error preparing update: \(errmsg)")
-                return
-            }
-            
-            if sqlite3_bind_int(stmt, 1, Int32(itemdice.amount)) != SQLITE_OK{
-                let errmsg = String(cString: sqlite3_errmsg(db)!)
-                print("failure binding id: \(errmsg)")
-                return
-            }
-            
-            if sqlite3_bind_int(stmt, 2, Int32(itemdice.id)) != SQLITE_OK{
-                let errmsg = String(cString: sqlite3_errmsg(db)!)
-                print("failure binding id: \(errmsg)")
-                return
-            }
-            
-            if sqlite3_step(stmt) != SQLITE_DONE {
-                let errmsg = String(cString: sqlite3_errmsg(db)!)
-                print("failure updating hero: \(errmsg)")
-                return
-            }
-            sqlite3_finalize(stmt)
+            updateDice(itemdice: cell.dice)
         }
-        
-        
-        readValues()
     }
     
+    //Method used to update each individual item
     func updateDice(itemdice : Dice)
     {
         let queryString = "UPDATE Dice SET amount = ? WHERE Id = ?;"
@@ -192,6 +164,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         return cell
     }
     
+    //Put spacing between each cell to give a better 'look' to the table
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         let cellSpacingHeight: CGFloat = 5
         return cellSpacingHeight
